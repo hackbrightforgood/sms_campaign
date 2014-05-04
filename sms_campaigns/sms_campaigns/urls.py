@@ -1,4 +1,6 @@
 from django.conf.urls import patterns, include, url
+
+# from sms_main.views import sms
 from sms_main.views import sms
 
 # Uncomment the next two lines to enable the admin:
@@ -12,6 +14,7 @@ urlpatterns = patterns('',
 
     url(r'^$', 'sms_main.views.home', name='home'),
     url(r'^sms/$', sms),
+    url(r'^campaign/$', 'sms_main.views.campaign', name='campaign'),
     
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

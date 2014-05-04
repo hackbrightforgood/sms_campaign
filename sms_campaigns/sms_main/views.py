@@ -7,9 +7,17 @@ from twilio.rest import TwilioRestClient
 from django_twilio.decorators import twilio_view
 from twilio.twiml import Response
 from django.conf import settings
+from sms_main.forms import *
+
 
 def home(request):
     return render(request, "index.html")
+
+def campaign(request):
+    if request.method =="POST":
+        form = CampaignForm(request.POST)
+    data = {'form': form}
+    return render(request, "campaign.html", data)
 
 def addGroup(group_name):
     Group.objects.create(name=group_name)

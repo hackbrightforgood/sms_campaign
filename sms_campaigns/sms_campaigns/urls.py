@@ -9,7 +9,8 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'sms_campaigns.views.home', name='home'),
     # url(r'^sms_campaigns/', include('sms_campaigns.foo.urls')),
-    
+
+    url(r'^$', 'sms_main.views.home', name='home'),
     url(r'^sms/$', sms),
     
     # Uncomment the admin/doc line below to enable admin documentation:

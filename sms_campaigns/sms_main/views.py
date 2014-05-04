@@ -1,12 +1,15 @@
 from sms_main.models import *
 import time
 from datetime import datetime
+from django.shortcuts import render
 import pytz
 from twilio.rest import TwilioRestClient
 from django_twilio.decorators import twilio_view
 from twilio.twiml import Response
 from django.conf import settings
 
+def home(request):
+    return render(request, "index.html")
 
 def addGroup(group_name):
     Group.objects.create(name=group_name)
